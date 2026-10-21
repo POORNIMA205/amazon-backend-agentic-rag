@@ -162,5 +162,4 @@ This is a deliberately small first milestone: transparent rule-based tool routin
 
 **Poornima H B**
 
-- GitHub: https://github.com/POORNIMA205
 - LinkedIn: https://www.linkedin.com/in/poornima-h-b-36bb3a2aa/
