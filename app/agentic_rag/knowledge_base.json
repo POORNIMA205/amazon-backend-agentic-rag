@@ -1,0 +1,44 @@
+[
+  {
+    "id": "authentication",
+    "title": "Registration and login",
+    "source": "Backend knowledge base",
+    "content": "The backend exposes POST /api/auth/register to register a user and POST /api/auth/login to log in. Login returns a JWT access token. In Swagger UI, use the Authorize control and provide the token in the format Bearer <access_token>. Endpoints that require authentication must be called with a valid token."
+  },
+  {
+    "id": "products",
+    "title": "Product catalog and administration",
+    "source": "Backend knowledge base",
+    "content": "GET /api/products/ lists products and supports category and name search parameters. GET /api/products/{id} retrieves one product. POST /api/products/, PUT /api/products/{id}, and DELETE /api/products/{id} are administrative operations and require an admin user. Product records can include name, description, price, category, stock, and image_url. The live database catalog is queried separately by the product_catalog tool."
+  },
+  {
+    "id": "cart",
+    "title": "Shopping cart",
+    "source": "Backend knowledge base",
+    "content": "The cart API is available under /api/cart/. Authenticated users can retrieve their cart, add a product, update its quantity with /api/cart/{product_id}, and remove a product with DELETE /api/cart/{product_id}. A product must exist in the catalog for it to be added."
+  },
+  {
+    "id": "orders",
+    "title": "Orders and order history",
+    "source": "Backend knowledge base",
+    "content": "POST /api/orders/ places an order from the current user's cart. GET /api/orders/ returns order history, and GET /api/orders/{id} retrieves one order subject to the application's authorization rules. Check the API documentation for the exact request and response schemas."
+  },
+  {
+    "id": "payments",
+    "title": "Mock payment API",
+    "source": "Backend knowledge base",
+    "content": "The payment API uses POST /api/payment/ to process a mock payment and GET /api/payment/{order_id} to retrieve payment information. This project payment flow is a demonstration only; it does not charge a real card or connect to a real payment gateway."
+  },
+  {
+    "id": "reverse_proxy",
+    "title": "Docker and Nginx reverse proxy",
+    "source": "Backend knowledge base",
+    "content": "Docker Compose runs the FastAPI application and Nginx as separate services. Nginx listens on host port 80 and forwards HTTP requests to the app service on port 8000 over the Compose network. Use http://localhost/docs to open Swagger UI through Nginx. Useful commands are docker compose up --build -d, docker compose ps, docker compose logs --tail=100, and docker compose down."
+  },
+  {
+    "id": "troubleshooting",
+    "title": "Basic troubleshooting",
+    "source": "Backend knowledge base",
+    "content": "If the service does not start, run docker compose ps and docker compose logs --tail=100. Check that Docker Desktop is running, the environment file exists, the Nginx config path in docker-compose.yml matches the real folder name, and port 80 is not already occupied. A 200 response from GET / indicates that the FastAPI health endpoint is responding, but test /docs and review proxy logs to verify Nginx routing."
+  }
+]

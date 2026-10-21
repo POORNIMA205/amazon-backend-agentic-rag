@@ -1,0 +1,19 @@
+# Secrets and environment settings
+.env
+.env.*
+!.env.example
+
+# Python generated files
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Logs and local databases
+logs/
+*.log
+*.db
+
+# Editor and test files
+.vscode/
+.pytest_cache/
